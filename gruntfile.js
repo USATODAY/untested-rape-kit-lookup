@@ -37,8 +37,8 @@ module.exports = function(grunt) {
       "exports": "L"
     },
     'angular': {
-+     "exports": "angular"
-+  }
+        "exports": "angular"
+   }
   };
 
   require('time-grunt')(grunt);
