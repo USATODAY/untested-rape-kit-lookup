@@ -4,11 +4,12 @@ define([
    "backbone",
    "templates",
    "helpers",
-   "views/ResultsView"
-], function(jQuery, _, Backbone, templates, helpers, ResultsView) {
+   "views/ResultsView",
+   "views/DetailView"
+], function(jQuery, _, Backbone, templates, helpers, ResultsView, DetailView) {
     return Backbone.View.extend({
         initialize: function() {
-            console.log(this.collection);
+            this.listenTo(Backbone, "detail:show", this.onDetailShow);
             this.render();
         },
         render: function() {
@@ -33,6 +34,10 @@ define([
             var filterTerm = this.$('.iapp-search-input').val();
             var filteredItems = this.filterItems(filterTerm);
             this.resultsView.render(filteredItems);
+        },
+        onDetailShow: function(entryModel) {
+            this.detailView = new DetailView({model: entryModel});
+            this.$el.append(this.detailView.el);
         }
 
     });

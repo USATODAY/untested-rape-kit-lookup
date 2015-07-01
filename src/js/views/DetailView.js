@@ -12,12 +12,12 @@ define([
         render: function() {
             this.$el.html(this.template(this.model.toJSON()));
         },
-        template: templates["EntryView.html"],
+        template: templates["DetailView.html"],
         events: {
-            "click": "onClick"
-        }, 
-        onClick: function(e) {
-            Backbone.trigger("detail:show", this.model);
+            "click .iapp-detail-close-button": "onCloseClick"
+        },
+        onCloseClick: function(e) {
+            this.remove();
         }
 
     });

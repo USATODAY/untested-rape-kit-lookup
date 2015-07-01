@@ -1,0 +1,26 @@
+.iapp-detail-wrap {
+    background-color: rgba(255, 255, 255, 0.8);
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+.iapp-detail-inner-wrap {
+    background-color: white;
+    border-radius: 5px;
+    @include BoxShadowHelper(2);
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 2em;
+    position: relative;
+    width: 100%;
+}
+
+.iapp-detail-close-button {
+    cursor: pointer;
+    right: 10px;
+    position: absolute;
+    top: 10px;
+}
