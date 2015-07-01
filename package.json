@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/USATODAY/untested-rape-kits.git"
+    "url": "git://github.com/USATODAY/untested-rape-kit-lookup.git"
   },
   "scripts": {
     "postinstall": "bower cache clean && bower install"
