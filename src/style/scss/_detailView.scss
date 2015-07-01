@@ -1,8 +1,8 @@
 .iapp-detail-wrap {
-    background-color: rgba(255, 255, 255, 0.8);
     bottom: 0;
+    color: $dark-grey;
     left: 0;
-    position: fixed;
+    position: absolute;
     right: 0;
     top: 0;
 }
@@ -10,12 +10,13 @@
 .iapp-detail-inner-wrap {
     background-color: white;
     border-radius: 5px;
-    @include BoxShadowHelper(2);
-    margin: 0 auto;
+    @include BoxShadowHelper(4);
+    margin: 4em auto;
     max-width: 600px;
     padding: 2em;
     position: relative;
     width: 100%;
+    z-index: 100;
 }
 
 .iapp-detail-close-button {
@@ -23,4 +24,45 @@
     right: 10px;
     position: absolute;
     top: 10px;
+    width: 20px;
+}
+
+.iapp-detail-head {
+    font-family: "Futura Today DemiBold", Arial, sans-serif;
+    font-size: 1.8em;
+}
+
+.iapp-detail-sub-head {
+    font-family: "Futura Today Light", Arial, sans-serif;
+    margin-bottom: 2em;
+}
+
+.iapp-detail-background {
+    background-color: transparentize($pale-grey-red, .1);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 99;
+}
+
+.iapp-detail-data-label {
+    font-size: 1.2em;
+    font-family: "Futura Today DemiBold", Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.iapp-detail-data-text.label {
+    background-color: $project-yellow;
+    font-size: 1.2em;
+}
+
+.iapp-detail-group {
+    margin-bottom: 2em;
+}
+
+.iapp-detail-info {
+    font-family: "Futura Today Light", Arial, sans-serif;
+    font-size: 1em;
 }

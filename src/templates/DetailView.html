@@ -1,9 +1,14 @@
 <div class="iapp-detail-wrap">
     <div class="iapp-detail-inner-wrap">
+        <div class="iapp-detail-close-button"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/close-icon.svg" alt="close"></div>
         <h2 class="iapp-detail-head"><%=Agency%></h2>
         <h4 class="iapp-detail-sub-head"><%=State%></h4>
-        <h3 class="iapp-detail-data-label">Total untested kits</h3>
-        <h3 class="iapp-detail-data-text"><%= Total_untested_kits%></h3>
-        <div class="iapp-detail-close-button">Close</div>
+        <div class="iapp-detail-group">
+            <span class="iapp-detail-data-label">Total untested kits: </span>
+            <span class="iapp-detail-data-text label label-primary"><%= Total_untested_kits_pretty %></span>
+        </div>
+        <h4 class="iapp-detail-info">Current as of: <%=Current_as_of_date %></h4>
+        <h4 class="iapp-detail-info">Source: <%=Source %></h4>
     </div>
+    <div class="iapp-detail-background"></div>
 </div>

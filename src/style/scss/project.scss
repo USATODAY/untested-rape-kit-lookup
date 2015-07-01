@@ -2,6 +2,7 @@
 default styles
 ******/
 
+@import "bootstrap";
 @import "fonts";
 @import "colors";
 @import "shadows";
@@ -15,3 +16,5 @@ project components
 ******/
 
 @import "detailView";
+@import "searchResults";
+@import "searchApp";

@@ -16,6 +16,7 @@ define([
         events: {
             "click": "onClick"
         }, 
+        className: "iapp-results-entry",
         onClick: function(e) {
             Backbone.trigger("detail:show", this.model);
         }

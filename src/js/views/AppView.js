@@ -26,14 +26,17 @@ define([
             var filteredArray = this.collection.filter(function(entryModel) {
                 return entryModel.get("searchName").indexOf(filterTerm) > -1;
             });
-            console.log(filteredArray);
             return filteredArray;
         }, 200),
         onSearchChange: function(e) {
             var _this = this;
             var filterTerm = this.$('.iapp-search-input').val();
             var filteredItems = this.filterItems(filterTerm);
-            this.resultsView.render(filteredItems);
+            if (filterTerm !== "") {
+                this.resultsView.render(filteredItems);
+            } else {
+                this.resultsView.hide();
+            }
         },
         onDetailShow: function(entryModel) {
             this.detailView = new DetailView({model: entryModel});

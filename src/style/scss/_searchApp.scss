@@ -1,0 +1,77 @@
+.iapp-search-wrap {
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    padding: 100px 0;
+    right: 0;
+    top: 0;
+}
+
+.iapp-search {
+    height: 100%;
+    margin: 0 auto;
+    max-width: 600px;
+    width: 100%;
+}
+
+.iapp-search-input {
+    background: white;
+    border-image: none;
+    border-style: none;
+    border: solid 3px white;
+    border-radius: 10px;
+    // box-shadow: none;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    color: $dark-grey;
+    font-family: "Futura Today Demibold", Arial,sans-serif;
+    font-size: 1.2em;
+    // margin-bottom: 1em;
+    padding: .5em;
+    // text-align: center;
+    transition: all 250ms ease;
+    -webkit-appearance: none; 
+    width: 100%;
+
+     &:focus {
+        border: solid 3px $light-grey;
+        outline: none;
+   }
+
+       ::-webkit-input-placeholder {
+         color: red;
+      }
+
+      :-moz-placeholder { /* Firefox 18- */
+         color: red;  
+      }
+
+      ::-moz-placeholder {  /* Firefox 19+ */
+         color: red;  
+      }
+
+      :-ms-input-placeholder {  
+         color: red;  
+      }
+}
+
+/******
+
+Branding
+
+******/
+
+.iapp-branding-logo {
+    display: block;
+    margin: 0 auto 2em auto;
+    width: 150px
+}
+
+.iapp-info-button {
+    cursor: pointer;
+    opacity: 0.8;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 30px;
+}

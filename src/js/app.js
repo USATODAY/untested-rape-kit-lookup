@@ -14,11 +14,22 @@ define(
         
         init: function() {
             var dataManager = new DataManager(config.dataURL);
+            var $pageWrap = jQuery('.iapp-page-wrap');
+            updateHeight();
             dataManager.getData(function(data) { 
                 var entriesCollection = new EntriesCollection(data);
                 var appView = new AppView({collection: entriesCollection});
-                jQuery(".iapp-page-wrap").append(appView.el);
+                $pageWrap.append(appView.el);
             });
+
+            $(window).resize(updateHeight);
+
+            function updateHeight(e) {
+                if (!config.isMobile) {
+                    var newHeight = window.innerHeight - 40;
+                    $pageWrap.height(newHeight);
+                }
+            }
         }
 
     };

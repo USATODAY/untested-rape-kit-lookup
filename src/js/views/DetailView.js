@@ -14,7 +14,8 @@ define([
         },
         template: templates["DetailView.html"],
         events: {
-            "click .iapp-detail-close-button": "onCloseClick"
+            "click .iapp-detail-close-button": "onCloseClick",
+            "click .iapp-detail-background": "onCloseClick"
         },
         onCloseClick: function(e) {
             this.remove();

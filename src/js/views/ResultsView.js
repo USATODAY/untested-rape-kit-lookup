@@ -8,6 +8,7 @@ define([
     return Backbone.View.extend({
         initialize: function() {
             this.subViews = [];
+            this.hide();
         },
         render: function(models) {
             var _this = this;
@@ -19,10 +20,15 @@ define([
                 _this.subViews.push(entryView);
                 _this.$el.append(entryView.el);
             });
-            console.log(this.el);
+            this.show();
             return this;
         },
-        template: "",
+        hide: function() {
+            this.$el.hide();
+        },
+        show: function() {
+            this.$el.show();
+        }
 
     });
 });
