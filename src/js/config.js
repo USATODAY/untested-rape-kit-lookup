@@ -2,7 +2,7 @@ define([
    "jquery",
 ], function(jQuery) {
     //set project data URL here
-    var dataURL = "http://www.gannett-cdn.com/experiments/usatoday/2015/06/rape-kits/data/data.json";
+    var dataURL = "http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/data/data.json";
     //set project image path here
     var imagePath = "";
 

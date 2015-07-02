@@ -25,10 +25,13 @@ define(
             $(window).resize(updateHeight);
 
             function updateHeight(e) {
+                var newHeight;
                 if (!config.isMobile) {
-                    var newHeight = window.innerHeight - 40;
-                    $pageWrap.height(newHeight);
+                    newHeight = window.innerHeight - 40;
+                } else {
+                    newHeight = window.innerHeight - 50;
                 }
+                $pageWrap.height(newHeight);
             }
         }
 
