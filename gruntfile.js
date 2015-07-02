@@ -37,8 +37,8 @@ module.exports = function(grunt) {
       "exports": "L"
     },
     'angular': {
-+     "exports": "angular"
-+  }
+        "exports": "angular"
+   }
   };
 
   require('time-grunt')(grunt);
@@ -301,17 +301,17 @@ module.exports = function(grunt) {
       },
       upload1: {
         files: {
-          '/17200/experiments/usatoday/2015/06/rape-kits/': 'js/main.js'
+          '/17200/experiments/usatoday/2015/07/rape-kits/': 'js/main.js'
         }
       },
       upload2: {
         files: {
-          '/17200/experiments/usatoday/2015/06/rape-kits/': 'style/project.css'
+          '/17200/experiments/usatoday/2015/07/rape-kits/': 'style/project.css'
         }
       },
       upload3: {
         files: {
-          '/17200/experiments/usatoday/2015/06/rape-kits/': 'data/*.json'
+          '/17200/experiments/usatoday/2015/07/rape-kits/': 'data/*.json'
         }
       }
     },
