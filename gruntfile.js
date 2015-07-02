@@ -38,7 +38,15 @@ module.exports = function(grunt) {
     },
     'angular': {
         "exports": "angular"
-   }
+   },
+   'jquery_ui': {
+        "deps": ['jquery'],
+        'exports': '$'
+    },
+    'jquery_ui_touch_punch' : {
+        "deps": ['jquery_ui'],
+        'exports': '$'
+    }
   };
 
   require('time-grunt')(grunt);

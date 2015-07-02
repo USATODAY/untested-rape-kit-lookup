@@ -4,16 +4,21 @@ define([
    "backbone",
    "templates",
    "helpers",
+   "config",
    "views/ResultsView",
-   "views/DetailView"
-], function(jQuery, _, Backbone, templates, helpers, ResultsView, DetailView) {
+   "views/DetailView",
+   "views/VideoView"
+], function(jQuery, _, Backbone, templates, helpers, config, ResultsView, DetailView, VideoView) {
     return Backbone.View.extend({
         initialize: function() {
             this.listenTo(Backbone, "detail:show", this.onDetailShow);
+            this.listenTo(Backbone, "video:end", this.onVideoEnd);
             this.render();
         },
         render: function() {
-            this.$el.html(this.template());
+            this.$el.html(this.template({isMobile: config.isMobile}));
+            var videoView = new VideoView();
+            this.$el.append(videoView.render().el);
             this.resultsView = new ResultsView({el: this.$(".iapp-search-results-wrap")});
             return this;
         },
@@ -44,6 +49,9 @@ define([
         onDetailShow: function(entryModel) {
             this.detailView = new DetailView({model: entryModel});
             this.$el.append(this.detailView.el);
+        },
+        onVideoEnd: function() {
+            this.$('.iapp-search-wrap').removeClass('iapp-fade');
         },
         showInfo : function(e) {
             this.$('.iapp-info-wrap').show();
