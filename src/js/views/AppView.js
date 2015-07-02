@@ -18,7 +18,10 @@ define([
             return this;
         },
         events: {
-            "keyup .iapp-search-input": "onSearchChange"
+            "keyup .iapp-search-input": "onSearchChange",
+            "click .iapp-info-button": "showInfo",
+            "click .iapp-info-close": "closeInfo",
+            "click .js-iapp-info-background": "closeInfo"
         },
         template: templates["AppView.html"],
         filterItems: _.throttle(function(filterTerm) {
@@ -41,6 +44,12 @@ define([
         onDetailShow: function(entryModel) {
             this.detailView = new DetailView({model: entryModel});
             this.$el.append(this.detailView.el);
+        },
+        showInfo : function(e) {
+            this.$('.iapp-info-wrap').show();
+        },
+        closeInfo: function(e) {
+            this.$('.iapp-info-wrap').hide();
         }
 
     });

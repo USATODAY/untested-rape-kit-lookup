@@ -1,7 +1,7 @@
 .iapp-search-results-wrap {
     background-color: white;
     border-radius: 10px;
-    border: solid 3px $light-grey;
+    border: solid 1px $light-grey;
     @include BoxShadowHelper(1);
     color: $dark-grey;
     margin-top: 5px;
@@ -20,6 +20,7 @@
 }
 
 .iapp-search-entry-title {
+    font-family: "Futura Today DemiBold", Arial, sans-serif;
     font-size: 1.2em;
 }
 

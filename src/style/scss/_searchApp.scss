@@ -15,6 +15,17 @@
     width: 100%;
 }
 
+.iapp-search-input-group {
+    position: relative;
+}
+
+.iapp-search-icon {
+    left: 5px;
+    position: absolute;
+    top: 7px;
+    width: 30px;
+}
+
 .iapp-search-input {
     background: white;
     border-image: none;
@@ -27,7 +38,7 @@
     font-family: "Futura Today Demibold", Arial,sans-serif;
     font-size: 1.2em;
     // margin-bottom: 1em;
-    padding: .5em;
+    padding: .5em .5em .5em 40px;
     // text-align: center;
     transition: all 250ms ease;
     -webkit-appearance: none; 
@@ -68,10 +79,14 @@ Branding
 }
 
 .iapp-info-button {
+    bottom: 10px;
     cursor: pointer;
-    opacity: 0.8;
+    opacity: 0.5;
     position: absolute;
     right: 10px;
-    bottom: 10px;
+    transition: opacity 250ms ease;
     width: 30px;
+    &:hover {
+        opacity: 1;
+    }
 }
