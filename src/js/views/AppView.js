@@ -25,6 +25,7 @@ define([
         events: {
             "keyup .iapp-search-input": "onSearchChange",
             "click .iapp-info-button": "showInfo",
+            "click .iapp-play-button": "showVideo",
             "click .iapp-info-close": "closeInfo",
             "click .js-iapp-info-background": "closeInfo"
         },
@@ -51,7 +52,11 @@ define([
             this.$el.append(this.detailView.el);
         },
         onVideoEnd: function() {
-            this.$('.iapp-search-wrap').removeClass('iapp-fade');
+            this.$('.iapp-search').removeClass('iapp-fade');
+        },
+        showVideo: function() {
+            Backbone.trigger('video:show');
+            this.$('.iapp-search').addClass('iapp-fade');
         },
         showInfo : function(e) {
             this.$('.iapp-info-wrap').show();

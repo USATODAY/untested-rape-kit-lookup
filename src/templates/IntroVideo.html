@@ -1,6 +1,11 @@
-<div class="video-wrap"> 
+<% if (isMobile) { %>
+    <div class="video-wrap video-wrap-mobile"> 
+<% } else { %>
+    <div class="video-wrap"> 
+<% } %>
     <div class="video-inner-wrap">
-        <div class="video-close-button"><img src="http://www.gannett-cdn.com/experiments/usatoday/2014/11/arrests-interactive/img/close.svg" alt=""></div>
+        <div class="video-close-button iapp-button"><div class="iapp-button-text">Skip Video</div></div>
+        <% if (!isMobile) { %>
         <!-- Video Controls -->
         <div id="video-controls" class="">
             <div id="play-pause" class="play"></div>
@@ -8,10 +13,14 @@
                 <div id="video-dot"></div>
             </div>
         </div> 
+        <% } %>
         <video id="introvid" class="bgvideo" autoplay poster="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/img/intro_bg_still.jpg">
             <source src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/media/<%= video_name%>.mp4" type="video/mp4" />
             <source src="http://www.gannett-cdn.com/experiments/usatoday/2015/04/gay-marriage/media/<%= video_name%>.ogv" type="video/ogg" />
         </video>
+        <% if (isMobile) { %>
+            <div class="iapp-button iapp-video-skip-button"><div class="iapp-button-text">Search Data</div></div>
+        <% } %>
     </div>
 </div>
 

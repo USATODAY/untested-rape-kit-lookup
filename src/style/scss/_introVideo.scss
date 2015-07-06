@@ -9,6 +9,20 @@
     vertical-align: middle;
 }
 
+.video-wrap.video-wrap-mobile {
+    margin: 50px auto 0 auto;
+    position: static;
+    width: 80%;
+}
+
+.video-wrap-mobile .bgvideo {
+    height: auto;
+    margin-top: 100px;
+    min-height: 0;
+    position: static;
+    width: 100%;
+}
+
 .iapp-intro-bg-image {
     position: absolute;
     top: 0;
@@ -50,6 +64,10 @@ Video Controls
   &.hidden{
     display: none !important;
   }
+}
+
+.video-wrap-mobile #video-controls {
+    display: none;
 }
 
 #seek-bar {
@@ -105,11 +123,17 @@ Video Controls
 
 .video-close-button {
   // @extend .menu-button;
+  background: white;
+  color: $dark-grey;
   cursor: pointer;
-  width: 4em;
+  // width: 4em;
   position: absolute;
-  opacity: 0.6;
+  // opacity: 0.6;
   right: 1em;
   top: 1em;
   z-index: 300 !important;
+}
+
+.video-wrap-mobile .video-close-button {
+    display: none;
 }

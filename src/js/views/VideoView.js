@@ -12,9 +12,10 @@ define(
     return Backbone.View.extend({
         initialize: function() {
             this.listenTo(Backbone, "window:resize", this.resizeVideo);
+            this.listenTo(Backbone, "video:show", this.showVideo);
         },
         render: function(data) {
-            this.$el.html(this.template({ video_name: "intro_bg", isMobile: config.isMobile }));
+            this.$el.html(this.template({ video_name: "intro_bg", isMobile: config.isMobile || config.isTablet }));
             this.$video = this.$('#introvid');
             this.video = this.$video[0];
             this.addVideoListeners();
@@ -23,7 +24,7 @@ define(
         },
         template: templates["IntroVideo.html"],
         resizeVideo: function() {
-            if (!config.isMobile && !config.isTable) {
+            if (!config.isMobile && !config.isTablet) {
                 var $videoEl = this.$('video');
                 if (window.innerWidth / window.innerHeight < 1920 / 1080) {
                     var numWidth = 100 * ((1920 / 1080) / (window.innerWidth / window.innerHeight));
@@ -34,9 +35,16 @@ define(
             }
             
         },
+        events: {
+            "click .iapp-video-skip-button": "onVideoEnd"
+        },
         onVideoEnd: function() {
             this.$('.video-wrap').fadeOut();
             Backbone.trigger('video:end');
+        },
+        showVideo: function() {
+            this.video.play();
+            this.$('.video-wrap').fadeIn();
         },
         addVideoListeners: function() {
             var video = this.video,

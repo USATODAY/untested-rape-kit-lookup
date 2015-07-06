@@ -9,6 +9,11 @@
     top: 0;
     transition: all 500ms ease 500ms;
     transform: translate(0, 0);
+
+    @media (max-width: 600px) {
+        padding: 50px 0;
+        // position: static;
+    }
 }
 
 .iapp-fade {
@@ -20,6 +25,8 @@
     height: 100%;
     margin: 0 auto;
     max-width: 600px;
+    transform: translate(0, 0);
+    transition: all 500ms ease 500ms;
     width: 100%;
 }
 
@@ -83,7 +90,11 @@ Branding
 .iapp-branding-logo {
     display: block;
     margin: 0 auto 2em auto;
-    width: 150px
+    width: 150px;
+
+    @media (max-width: 600px) {
+        width: 80px;
+    }
 }
 
 .iapp-info-button {
@@ -97,4 +108,14 @@ Branding
     &:hover {
         opacity: 1;
     }
+}
+
+.iapp-play-button {
+    @extend .iapp-info-button;
+    right: none;
+    left: 10px;
+}
+
+.iapp-video-skip-button {
+    margin-top: 1em;
 }
