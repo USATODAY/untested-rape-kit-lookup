@@ -13,6 +13,9 @@ define(
         initialize: function() {
             this.listenTo(Backbone, "window:resize", this.resizeVideo);
             this.listenTo(Backbone, "video:show", this.showVideo);
+            this.listenTo(Backbone, "router:search", this.skipVideo);
+            this.listenTo(Backbone, "router:detail", this.skipVideo);
+            this.listenTo(Backbone, "router:info", this.skipVideo);
         },
         render: function(data) {
             this.$el.html(this.template({ video_name: "intro_bg", isMobile: config.isMobile || config.isTablet }));
@@ -45,6 +48,11 @@ define(
         showVideo: function() {
             this.video.play();
             this.$('.video-wrap').fadeIn();
+        },
+        skipVideo: function() {
+            this.$('.video-wrap').hide();
+            console.log(this.$('.video-wrap')[0]);
+            this.video.pause();
         },
         addVideoListeners: function() {
             var video = this.video,
