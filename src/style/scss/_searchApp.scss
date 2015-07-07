@@ -4,14 +4,14 @@
     opacity: 1;
     overflow: hidden;
     position: absolute;
-    padding: 100px 0;
+    padding: 60px 0;
     right: 0;
     top: 0;
     transition: all 500ms ease 500ms;
     transform: translate(0, 0);
 
     @media (max-width: 600px) {
-        padding: 50px 0;
+        padding: 10px 0;
         // position: static;
     }
 }
@@ -81,6 +81,13 @@
       }
 }
 
+.iapp-chatter {
+    color: white;
+    font-family: "Futura Today Light", Arial, sans-serif;
+    margin: 0.5em auto;
+    width: 90%;
+}
+
 /******
 
 Branding
@@ -90,7 +97,7 @@ Branding
 .iapp-branding-logo {
     display: block;
     margin: 0 auto 2em auto;
-    width: 150px;
+    width: 100px;
 
     @media (max-width: 600px) {
         width: 80px;
