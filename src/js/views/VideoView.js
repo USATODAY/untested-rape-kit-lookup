@@ -18,7 +18,7 @@ define(
             this.listenTo(Backbone, "router:info", this.skipVideo);
         },
         render: function(data) {
-            this.$el.html(this.template({ video_name: "intro_bg", isMobile: config.isMobile || config.isTablet }));
+            this.$el.html(this.template({ video_name: "RapeKitsFinal", isMobile: config.isMobile || config.isTablet }));
             this.$video = this.$('#introvid');
             this.video = this.$video[0];
             this.addVideoListeners();

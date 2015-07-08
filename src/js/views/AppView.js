@@ -36,9 +36,9 @@ define([
         },
         template: templates["AppView.html"],
         filterItems: _.throttle(function(filterTerm) {
-            filterTerm = helpers.cleanName(filterTerm);
+            filterTerm = helpers.slugify(filterTerm);
             var filteredArray = this.collection.filter(function(entryModel) {
-                return entryModel.get("searchName").indexOf(filterTerm) > -1;
+                return entryModel.get("slug").indexOf(filterTerm) > -1;
             });
             return filteredArray;
         }, 200),
