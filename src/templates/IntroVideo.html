@@ -21,10 +21,10 @@
             <source src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/media/<%= video_name%>.mp4" type="video/mp4" />
             <source src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/media/<%= video_name%>.ogv" type="video/ogg" />
         </video>
-        <% if (isMobile) { %>
+    </div>
+        <% if (isMobile || isTablet) { %>
             <div class="iapp-button iapp-video-skip-button"><div class="iapp-button-text">Search Data</div></div>
         <% } %>
-    </div>
 </div>
 
 

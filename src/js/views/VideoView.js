@@ -39,7 +39,7 @@ define(
             
         },
         events: {
-            "click .iapp-video-skip-button": "onVideoEnd",
+            "click .iapp-video-skip-button": "skipVideo",
             "click .iapp-tablet-play-button": "play"
         },
         play: function() {
@@ -56,7 +56,7 @@ define(
         },
         skipVideo: function() {
             this.$('.video-wrap').hide();
-            console.log(this.$('.video-wrap')[0]);
+            Backbone.trigger('video:end');
             this.video.pause();
         },
         addVideoListeners: function() {
