@@ -2,13 +2,14 @@ define(
   [
     'jquery',
     'underscore',
+    'backbone',
     'templates',
     'dataManager',
     'config',
     'collections/EntriesCollection',
     'views/AppView'
   ],
-  function(jQuery, _, templates, DataManager, config, EntriesCollection, AppView){
+  function(jQuery, _, Backbone, templates, DataManager, config, EntriesCollection, AppView){
 
     return {
         
@@ -22,7 +23,12 @@ define(
                 $pageWrap.append(appView.el);
             });
 
-            $(window).resize(updateHeight);
+            $(window).resize(onResize);
+
+            function onResize(e) {
+                Backbone.trigger("window:resize");
+                updateHeight(e);
+            }
 
             function updateHeight(e) {
                 var newHeight;

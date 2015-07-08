@@ -54,7 +54,7 @@
 }
 
 .iapp-detail-data-text.label {
-    background-color: $project-yellow;
+    background-color: $project-red;
     font-size: 1.2em;
 }
 
@@ -67,4 +67,67 @@
 .iapp-detail-info {
     font-family: "Futura Today Light", Arial, sans-serif;
     font-size: 1em;
+}
+
+/******
+Detail Share
+******/
+
+.iapp-detail-share-wrap {
+    bottom: 10px;
+    position: absolute;
+    right: 10px;
+    z-index: 105;
+}
+
+.iapp-detail-share-button {
+    background-color: rgba(255, 255, 255, 0);
+    border: solid 1px white;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-family: "Futura Today Light", Arial, sans-serif;
+    opacity: 0.6;
+    padding: 10px;
+    text-transform: uppercase;
+    transition: all 500ms ease;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+        opacity: 1;
+    }
+}
+
+.iapp-share-icon-wrap {
+    bottom: 50px;
+    opacity: 0;
+    position: absolute;
+    right: 10px;
+    width: 50px;
+    transition: all 250ms ease;
+    z-index: 500;
+    &.iapp-show {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+    @media (max-width: 600px) {
+        width: 40px;
+    }
+}
+
+.iapp-share-icon {
+    display: block;
+    transform: translate(0, 300%);
+    &:nth-child(0n+1) {
+        transition: all 250ms ease;
+    }
+    &:nth-child(0n+2) {
+        transition: all 250ms ease 100ms;
+    }
+}
+
+.iapp-show {
+    .iapp-share-icon {
+        transform: translate(0, 0);
+    }
 }

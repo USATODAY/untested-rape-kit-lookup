@@ -1,0 +1,30 @@
+<% if (isMobile || isTablet) { %>
+    <div class="video-wrap video-wrap-mobile"> 
+<% } else { %>
+    <div class="video-wrap"> 
+<% } %>
+    <div class="video-inner-wrap">
+        <div class="video-close-button iapp-button"><div class="iapp-button-text">Skip Video</div></div>
+        <% if (!isMobile) { %>
+        <!-- Video Controls -->
+        <div id="video-controls" class="">
+            <div id="play-pause" class="play"></div>
+            <div id="seek-bar">
+                <div id="video-dot"></div>
+            </div>
+        </div> 
+        <% } %>
+        <% if (isTablet) {%>
+            <div class="iapp-tablet-play-button"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/play-icon-white.svg" alt="Play video"></div>
+        <% } %>
+        <video id="introvid" class="bgvideo" autoplay poster="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/video_still.jpg">
+            <source src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/media/<%= video_name%>.mp4" type="video/mp4" />
+            <source src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/media/<%= video_name%>.ogv" type="video/ogg" />
+        </video>
+    </div>
+        <% if (isMobile || isTablet) { %>
+            <div class="iapp-button iapp-video-skip-button"><div class="iapp-button-text">Search Data</div></div>
+        <% } %>
+</div>
+
+

@@ -6,6 +6,10 @@ define([
     //set project image path here
     var imagePath = "";
 
+    //set project default share language here
+    var defaultShareLanguage = "Untested Rape Kits";
+    var defaultShareImage = imagePath + "fb-post.jpg";
+
     var isMobile, fb_app_id;
     var isTablet = false;
 
@@ -31,6 +35,8 @@ define([
         staticInfo: staticInfo,
         fb_app_id: fb_app_id,
         isMobile: isMobile,
-        isTablet: isTablet
+        isTablet: isTablet,
+        defaultShareLanguage: defaultShareLanguage,
+        defaultShareImage: defaultShareImage
     };
 });
