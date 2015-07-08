@@ -105,9 +105,13 @@ Detail Share
     right: 10px;
     width: 50px;
     transition: all 250ms ease;
+    z-index: 500;
     &.iapp-show {
         opacity: 1;
         transform: translate(0, 0);
+    }
+    @media (max-width: 600px) {
+        width: 40px;
     }
 }
 

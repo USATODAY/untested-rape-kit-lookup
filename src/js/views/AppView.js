@@ -20,9 +20,14 @@ define([
             this.render();
         },
         render: function() {
-            this.$el.html(this.template({isMobile: config.isMobile}));
+            this.$el.html(this.template({isMobile: config.isMobile || config.isTablet}));
             var videoView = new VideoView();
-            this.$el.append(videoView.render().el);
+
+            if (config.isMobile || config.isTablet) {
+                this.$('.iapp-mobile-video-container').html(videoView.render().el);
+            } else {
+                this.$el.append(videoView.render().el);
+            }
             this.resultsView = new ResultsView({el: this.$(".iapp-search-results-wrap")});
             Backbone.history.start();
             return this;

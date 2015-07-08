@@ -18,7 +18,7 @@ define(
             this.listenTo(Backbone, "router:info", this.skipVideo);
         },
         render: function(data) {
-            this.$el.html(this.template({ video_name: "RapeKitsFinal", isMobile: config.isMobile || config.isTablet }));
+            this.$el.html(this.template({ video_name: "RapeKitsFinal", isMobile: config.isMobile, isTablet: config.isTablet }));
             this.$video = this.$('#introvid');
             this.video = this.$video[0];
             this.addVideoListeners();
@@ -39,7 +39,12 @@ define(
             
         },
         events: {
-            "click .iapp-video-skip-button": "onVideoEnd"
+            "click .iapp-video-skip-button": "onVideoEnd",
+            "click .iapp-tablet-play-button": "play"
+        },
+        play: function() {
+            console.log("play");
+            this.video.play();
         },
         onVideoEnd: function() {
             this.$('.video-wrap').fadeOut();
@@ -66,6 +71,7 @@ define(
                 $videoCloseButton = this.$(".video-close-button"),
                 $videoSeekBar = this.$("#seek-bar"),
                 $videoSeekDot = this.$("#video-dot");
+                $tabletPlayButton = this.$('.iapp-tablet-play-button');
 
 
             // Event listener for the play/pause button
@@ -123,11 +129,14 @@ define(
             video.addEventListener("playing", function(e) {
               $videoPlayButton.addClass("pause");
               $videoPlayButton.removeClass("play");
+              $tabletPlayButton.hide();
+
             });
 
             video.addEventListener("pause", function(e) {
               $videoPlayButton.removeClass("pause");
               $videoPlayButton.addClass("play");
+              $tabletPlayButton.show();
             });
 
             video.addEventListener("ended", onVideoEnd.bind(this));

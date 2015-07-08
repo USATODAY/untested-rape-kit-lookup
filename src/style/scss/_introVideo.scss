@@ -11,7 +11,7 @@
 
 .video-wrap.video-wrap-mobile {
     margin: 50px auto 0 auto;
-    position: static;
+    position: relative;
     width: 80%;
 }
 
@@ -70,6 +70,14 @@ Video Controls
     display: none;
 }
 
+.iapp-tablet-play-button {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+}
+
 #seek-bar {
   background-color: $medium-grey;
   cursor: pointer;
@@ -77,7 +85,7 @@ Video Controls
   height: 10px;
   margin-left: 20px; 
   position: relative;
-  width: 90%;
+  width: calc(100% - 80px);
 }
 
 
