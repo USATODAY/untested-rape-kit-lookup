@@ -66,6 +66,8 @@ define([
             this.onDetailShow(entryModel);
         },
         onDetailShow: function(entryModel) {
+            this.$('.iapp-search-input').val('');
+            this.onSearchChange();
             this.detailView = new DetailView({model: entryModel});
             this.$el.append(this.detailView.el);
         },
