@@ -84,8 +84,12 @@
 .iapp-chatter {
     color: white;
     font-family: "Futura Today Light", Arial, sans-serif;
-    margin: 0.5em auto;
+    margin: 0.5em auto 1em auto;
     width: 90%;
+
+    @media (min-width: 800px) {
+        font-size: 1.1em;
+    }
 }
 
 /******
