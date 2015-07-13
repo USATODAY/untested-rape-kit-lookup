@@ -11,6 +11,8 @@ define([
                 var filename = dataURLSplit[dataURLSplit.length - 1];
                 if ((hostname == "localhost" || hostname == "10.0.2.2")) {
                     dataURL = 'data/' + filename;
+                } else if (hostname == "www.gannett-cdn.com") {
+                    dataURL = dataURL;
                 } else {
                     dataURL = "http://" + hostname + "/services/webproxy/?url=" + dataURL;
                 }

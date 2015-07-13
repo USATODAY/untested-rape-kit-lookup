@@ -9,13 +9,13 @@
     vertical-align: middle;
 }
 
-.video-wrap.video-wrap-mobile {
+.iapp-embed .video-wrap, .video-wrap.video-wrap-mobile {
     margin: 50px auto 0 auto;
     position: relative;
     width: 80%;
 }
 
-.video-wrap-mobile .bgvideo {
+.iapp-embed .video-wrap, .video-wrap-mobile .bgvideo {
     height: auto;
     margin-top: 10px;
     min-height: 0;
