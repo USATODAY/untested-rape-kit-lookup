@@ -13,6 +13,8 @@ define([
     var isMobile, fb_app_id;
     var isTablet = false;
 
+    var blnIframeEmbed = window != window.parent;
+
     var staticInfo = JSON.parse(jQuery(".staticinfo").html());
 
     if (staticInfo.platform == "desktop") {
@@ -37,6 +39,7 @@ define([
         isMobile: isMobile,
         isTablet: isTablet,
         defaultShareLanguage: defaultShareLanguage,
-        defaultShareImage: defaultShareImage
+        defaultShareImage: defaultShareImage,
+        isIframe: blnIframeEmbed
     };
 });
