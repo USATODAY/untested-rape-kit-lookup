@@ -14,10 +14,15 @@ define(
     return {
         
         init: function() {
-            var dataManager = new DataManager(config.dataURL);
+            var dataManager = new DataManager(config.dataURL, function(data) {
+                _.each(data, function(entry) {
+                    entry.Agency = entry.Agency.trim();
+                });
+                return _.sortBy(data, 'Agency');
+            });
             var $pageWrap = jQuery('.iapp-page-wrap');
             updateHeight();
-            dataManager.getData(function(data) { 
+            dataManager.getData(function(data) {
                 var entriesCollection = new EntriesCollection(data);
                 var appView = new AppView({collection: entriesCollection});
                 $pageWrap.append(appView.el);
