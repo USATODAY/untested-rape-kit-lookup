@@ -44,6 +44,10 @@ define(
                 }
                 $pageWrap.height(newHeight);
             }
+
+            if (config.isIframe) {
+                $pageWrap.addClass('iapp-embed');
+            }
         }
 
     };
