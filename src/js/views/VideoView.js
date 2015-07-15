@@ -30,10 +30,18 @@ define(
             if (!config.isMobile && !config.isTablet) {
                 var $videoEl = this.$('video');
                 if (window.innerWidth / window.innerHeight < 1920 / 1080) {
-                    var numWidth = 100 * ((1920 / 1080) / (window.innerWidth / window.innerHeight));
-                    $videoEl.css({"width" : numWidth.toString() + "%", "left" : ((100 - numWidth) / 2).toString() + "%"});
+                    // do this when the window is too tall
+                    var height = window.innerWidth * 9/16;
+                    var offSetTop = (window.innerHeight - height) / 2;
+                    $videoEl.css({"width" : "100%", "left" : "0", "height": height.toString() + "px", "top": offSetTop.toString() + "px"});
                 } else {
-                    $videoEl.css({"width" : "100%", "left" : "0%"});
+                    // do this when the window is too wide
+                    console.log("too wide");
+                    var winHeight = window.innerHeight;
+                    var width = winHeight * 16/9;
+                    console.log(width);
+                    var offSetLeft = (window.innerWidth - width ) / 2;
+                    $videoEl.css({"height": winHeight.toString() + "px", "width": width.toString() + "px", "top": "0%", "left": offSetLeft.toString() + "px"});
                 }
             }
             
@@ -142,11 +150,12 @@ define(
             video.addEventListener("ended", onVideoEnd.bind(this));
 
             $videoContainer.on("mouseover", function(e) {
-                $videoControls.fadeIn();
+                console.log("show controls");
+                $videoControls.show();
             });
 
             $videoContainer.on("mouseleave", function(e) {
-                $videoControls.fadeOut();
+                $videoControls.show();
             });
 
             $videoCloseButton.click(function(e) {
