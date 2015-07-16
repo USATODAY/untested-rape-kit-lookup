@@ -3,10 +3,19 @@
 <% } else { %>
     <div class="video-wrap"> 
 <% } %>
-    <div class="video-inner-wrap">
-        <div class="video-close-button iapp-button"><div class="iapp-button-text">Skip Video</div></div>
+    <div class="video-intro-overlay">
+        <div class="video-intro-overlay-content">
+            <img class="iapp-branding-logo video-overlay-logo" src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/logo.png" alt="Untested rape kits">
+            <p class="video-intro-overlay-chatter">USA TODAY obtained records identifying more than 70,000 sexual assault kits booked into evidence at hundreds of the nation’s law enforcement agencies that have never been tested. Use this tool to look up the number of sexual assault kits held by those agencies. Not every agency is in our database. Some were not surveyed; others declined to respond or release records.</p>
+            <% if (!isMobile) {%>
+                <div class="iapp-tablet-play-button"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/play-icon-white.svg" alt="Play video"></div>
+                <div class="iapp-button iapp-video-skip-button"><div class="iapp-button-text">Skip Video</div></div>
+            <% } %>
+        </div>
+        </div>
         <% if (!isMobile) { %>
         <!-- Video Controls -->
+        <div class="video-close-button iapp-button" style="display: none"><div class="iapp-button-text">Skip Video</div></div>
         <div id="video-controls" class="">
             <div id="play-pause" class="play"></div>
             <div id="seek-bar">
@@ -14,16 +23,12 @@
             </div>
         </div> 
         <% } %>
-        <% if (!isMobile) {%>
-            <div class="iapp-tablet-play-button"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/play-icon-white.svg" alt="Play video"></div>
-        <% } %>
         <video id="introvid" class="bgvideo" poster="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/video_still.jpg">
             <source src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/media/<%= video_name%>.mp4" type="video/mp4" />
             <source src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/media/<%= video_name%>.ogv" type="video/ogg" />
         </video>
-    </div>
         <% if (isMobile || isTablet) { %>
-            <div class="iapp-button iapp-video-skip-button"><div class="iapp-button-text">Search Data</div></div>
+            <div class="iapp-button iapp-video-skip-button"><div class="iapp-button-text">Skip Video</div></div>
         <% } %>
 </div>
 

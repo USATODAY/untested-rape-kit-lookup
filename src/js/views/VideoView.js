@@ -23,9 +23,6 @@ define(
             this.video = this.$video[0];
             this.addVideoListeners();
             this.resizeVideo();
-            if (!config.isMobile) {
-                this.play();
-            }
             return this;
         },
         template: templates["IntroVideo.html"],
@@ -55,6 +52,9 @@ define(
         },
         play: function() {
             this.video.play();
+            if (!config.isMobile) {
+                this.$('.video-intro-overlay').hide();
+            }
         },
         onVideoEnd: function() {
             this.$('.video-wrap').fadeOut();
@@ -63,6 +63,9 @@ define(
         showVideo: function() {
             this.video.play();
             this.$('.video-wrap').fadeIn();
+            if (!config.isMobile) {
+                this.$('.video-intro-overlay').hide();
+            }
         },
         skipVideo: function() {
             this.$('.video-wrap').hide();
@@ -137,9 +140,11 @@ define(
 
             //keep the controls updated to whether or not video is playing
             video.addEventListener("playing", function(e) {
+              $videoControls.show();
               $videoPlayButton.addClass("pause");
               $videoPlayButton.removeClass("play");
               $tabletPlayButton.hide();
+              $videoCloseButton.show();
 
             });
 
@@ -152,12 +157,11 @@ define(
             video.addEventListener("ended", onVideoEnd.bind(this));
 
             $videoContainer.on("mouseover", function(e) {
-                console.log("show controls");
-                $videoControls.show();
+                // $videoControls.show();
             });
 
             $videoContainer.on("mouseleave", function(e) {
-                $videoControls.show();
+                // $videoControls.show();
             });
 
             $videoCloseButton.click(function(e) {
