@@ -1,0 +1,16 @@
+article {
+  height: 100% !important;
+  overflow-y: auto;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+section.contents, #overlay {
+  height: 100% !important;
+}
+
+html, body, .transition-wrap,  article.padded-container, .non-article-content { height: 100% !important; }
+
+article.first-margin { margin-top: 0 !important; padding-top: 50px !important; }
+
+footer { display: none !important;}

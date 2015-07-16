@@ -1,7 +1,8 @@
 .iapp-page-wrap {
+    height: 100%;
     margin: 0 auto;
     position: relative;
-    width: 90%;
+    width: 100%;
 }
 
 .iapp-search-wrap {
@@ -17,14 +18,17 @@
     transform: translate(0, 0);
 
     @media (max-width: 600px) {
-        padding: 10px 0;
-        // position: static;
+        padding: 10px 0 60px 0;
+        position: relative;
     }
 }
 
 .iapp-fade {
     opacity: 0;
     transform: translate(0, 50px);
+    @media (max-width: 600px) {
+        display: none;
+    }
 }
 
 .iapp-search {
@@ -124,6 +128,10 @@ Branding
     width: 30px;
     &:hover {
         opacity: 1;
+    }
+
+    @media(min-width: 600px) {
+        bottom: 60px;
     }
 }
 

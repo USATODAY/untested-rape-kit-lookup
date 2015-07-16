@@ -38,11 +38,11 @@ define(
             function updateHeight(e) {
                 var newHeight;
                 if (!config.isMobile) {
-                    newHeight = window.innerHeight - 40;
+                    // newHeight = window.innerHeight - 40;
+                    // $pageWrap.height(newHeight);
                 } else {
-                    newHeight = window.innerHeight - 50;
+                    // newHeight = window.innerHeight + 100;
                 }
-                $pageWrap.height(newHeight);
             }
 
             if (config.isIframe) {
