@@ -5,11 +5,14 @@
     width: 100%;
 }
 
+.iapp-page-wrap.iapp-embed {
+    width: 90%;
+}
+
 .iapp-search-wrap {
     bottom: 0;
     left: 0;
     opacity: 1;
-    overflow: hidden;
     position: absolute;
     padding: 60px 0;
     right: 0;
