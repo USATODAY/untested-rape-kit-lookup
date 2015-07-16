@@ -58,7 +58,7 @@ define([
             }
         },
         skipVideo: function() {
-            this.$('.iapp-search').removeClass('iapp-fade');
+            this.$('.iapp-search-wrap').removeClass('iapp-fade');
         },
         onDetailRoute: function(slug) {
             this.skipVideo();
@@ -72,12 +72,12 @@ define([
             this.$el.append(this.detailView.el);
         },
         onVideoEnd: function() {
-            this.$('.iapp-search').removeClass('iapp-fade');
+            this.$('.iapp-search-wrap').removeClass('iapp-fade');
             router.navigate('search/');
         },
         showVideo: function() {
             Backbone.trigger('video:show');
-            this.$('.iapp-search').addClass('iapp-fade');
+            this.$('.iapp-search-wrap').addClass('iapp-fade');
         },
         onInfoRoute: function() {
             this.skipVideo();

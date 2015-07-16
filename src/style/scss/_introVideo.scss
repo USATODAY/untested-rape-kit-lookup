@@ -65,7 +65,7 @@ Video Controls
 #video-controls{
   background-color: rgba(0, 0, 0, 0.8);
   bottom: 0;
-  // display: none;
+  display: none;
   padding: .5em;
   position: absolute;
   width: 100%;
@@ -81,10 +81,11 @@ Video Controls
 
 .iapp-tablet-play-button {
     cursor: pointer;
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    // left: 50%;
+    // position: absolute;
+    // top: 50%;
+    // transform: translate(-50%, -50%);
+    margin: 0 auto;
     width: 100px;
     z-index: 500;
 }

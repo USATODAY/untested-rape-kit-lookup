@@ -1,0 +1,39 @@
+.video-intro-overlay {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 600;
+}
+
+.iapp-mobile-video-container .video-intro-overlay {
+    position: static;
+}
+
+.video-intro-overlay-content {
+    margin: 0 auto;
+    max-width: 600px;
+    width: 90%;
+}
+
+.iapp-mobile-video-container .video-overlay-logo {
+    margin-top: 0;
+}
+
+.video-overlay-logo {
+    margin-top: 3em;
+}
+
+.video-intro-overlay-header {
+    color: white;
+    font-family: "Futura Today DemiBold", Arial, sans-serif;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.video-intro-overlay-chatter {
+    color: white;
+    font-family: "Futura Today Light", Arial, sans-serif;
+}
