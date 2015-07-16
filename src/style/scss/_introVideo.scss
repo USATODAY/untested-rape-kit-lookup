@@ -50,6 +50,10 @@
     top: 0;
 }
 
+.video-wrap.video-wrap-mobile {
+    background: none;
+}
+
 .video-inner-wrap {
     // position: relative;
 }
@@ -76,11 +80,13 @@ Video Controls
 }
 
 .iapp-tablet-play-button {
+    cursor: pointer;
     left: 50%;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 100px;
+    z-index: 500;
 }
 
 #seek-bar {

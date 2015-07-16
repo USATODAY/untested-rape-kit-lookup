@@ -23,6 +23,9 @@ define(
             this.video = this.$video[0];
             this.addVideoListeners();
             this.resizeVideo();
+            if (!config.isMobile) {
+                this.play();
+            }
             return this;
         },
         template: templates["IntroVideo.html"],
@@ -51,7 +54,6 @@ define(
             "click .iapp-tablet-play-button": "play"
         },
         play: function() {
-            console.log("play");
             this.video.play();
         },
         onVideoEnd: function() {
